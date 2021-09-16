@@ -18,8 +18,7 @@ RUN apt-get install -y \
 RUN apt-get install -y \
     libopenmpi-dev
 
-#coevol
-RUN git clone https://github.com/bayesiancook/pbmpi.git && cd pbmpi/sources/ && make
-RUN cd /
+#pbmpi
+RUN WORKING_DIR="pbmpi"; if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi &&  git clone https://github.com/bayesiancook/pbmpi.git -v && cd pbmpi/sources/  && make  && cd /
 
 ENV PATH="/pbmpi/data:${PATH}"
