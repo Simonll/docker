@@ -18,8 +18,9 @@ RUN apt-get install -y \
 RUN apt-get install -y \
     libopenmpi-dev
 
-#coevol
-RUN WORKING_DIR="coevol"; if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi && git clone https://github.com/bayesiancook/coevol.git && cd coevol/sources/ && make
-RUN cd /
+# create data dir
+RUN mkdir data
 
+#coevol
+RUN WORKING_DIR="coevol"; if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi && git clone https://github.com/bayesiancook/coevol.git && cd coevol/sources/ && make && cd /
 ENV PATH="/coevol/data:${PATH}"
