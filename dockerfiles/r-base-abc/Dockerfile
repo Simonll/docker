@@ -7,6 +7,8 @@ RUN apt-get update \
 	abc \
     && rm -rf /tmp/downloaded_packages
 
+RUN mkdir data
+
 ENV TZ=America/Montreal
 
 #COPY . /usr/local/src/myscripts
