@@ -6,7 +6,6 @@ RUN apt-get update \
 	--deps TRUE \
 	abc \
 	arrow \
-	assertthat \
 	optparse \
     && rm -rf /tmp/downloaded_packages
 
