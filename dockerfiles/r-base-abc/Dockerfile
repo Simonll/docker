@@ -1,16 +1,17 @@
 FROM r-base
-
+ENV TZ=America/Montreal
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
 	&& install2.r --error \
 	--deps TRUE \
 	abc \
+	arrow \
+	assertthat \
+	optparse \
     && rm -rf /tmp/downloaded_packages
 
 RUN mkdir data
 
-ENV TZ=America/Montreal
+RUN WORKING_DIR="r_abc"; if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi &&  git clone https://github.com/Simonll/r_abc.git
 
-#COPY . /usr/local/src/myscripts
-#WORKDIR /usr/local/src/myscripts
-#CMD ["Rscript", "myscript.R"]
+CMD ["Rscript", "/r_abc/scripts/abc.r"]
