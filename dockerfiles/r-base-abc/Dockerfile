@@ -1,8 +1,8 @@
 FROM r-base
 ENV TZ=America/Montreal
 RUN apt-get update \
-	&& apt-get install -y --no-install-recommends \
-	&& install2.r --error \
+	&& apt-get install -y --no-install-recommends
+RUN install2.r --error \
 	--deps TRUE \
 	abc \
 	arrow \
