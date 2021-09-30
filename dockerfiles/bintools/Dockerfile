@@ -12,7 +12,8 @@ RUN apt-get install -y \
     libreadline-dev \
     libtool \
     make \
-    mpich
+    mpich \
+    curl
 
 RUN WORKING_DIR="data"; if [ ! -d "$WORKING_DIR" ]; then mkdir data; fi 
 RUN WORKING_DIR="bintools"; if [ -d "$WORKING_DIR" ]; then cd bintools/ ; git pull; cd ..	; else git clone https://github.com/Simonll/bintools.git ; fi
