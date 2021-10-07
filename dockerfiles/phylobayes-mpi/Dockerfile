@@ -17,6 +17,8 @@ RUN apt-get install -y \
 # OpenMPI
 RUN apt-get install -y \
     libopenmpi-dev
+ENV OMPI_ALLOW_RUN_AS_ROOT=1
+ENV OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1
 # create data dir
 RUN mkdir data
 
