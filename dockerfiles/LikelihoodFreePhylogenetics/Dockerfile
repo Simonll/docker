@@ -20,7 +20,7 @@ RUN apt-get install -y \
 # create data dir
 RUN mkdir data
 
-#phylobayes
-RUN WORKING_DIR="phylobayes"; if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi &&  git clone https://github.com/bayesiancook/phylobayes.git -v && cd phylobayes/sources/  && make  && cd /
-ENV PATH="/phylobayes/data:${PATH}"
+#LikelihoodFreePhylogenetics
+RUN WORKING_DIR="/LikelihoodFreePhylogenetics/"; if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi &&  git clone https://github.com/Simonll/LikelihoodFreePhylogenetics.git -v && cd LikelihoodFreePhylogenetics/sources/  && make  && cd /
+ENV PATH="/LikelihoodFreePhylogenetics/data:${PATH}"
 
