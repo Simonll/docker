@@ -8,7 +8,6 @@ ENV LIBARROW_MINIMAL=false
 RUN install2.r --error --deps TRUE abc arrow optparse
 RUN rm -rf /tmp/downloaded_packages
 
-RUN WORKING_DIR="data"; if [ ! -d "$WORKING_DIR" ]; then mkdir data; fi 
-RUN WORKING_DIR="r_abc"; if [ -d "$WORKING_DIR" ]; then cd r_abc/ ; git pull; cd ..	; else git clone https://github.com/Simonll/r_abc.git ; fi 
+RUN WORKING_DIR="r_abc"; if [ -d "$WORKING_DIR" ]; then rm -Rf $WORKING_DIR; fi &&  git clone https://github.com/Simonll/r_abc.git ; fi
 
 ENTRYPOINT ["Rscript", "/r_abc/scripts/abc.r"]
