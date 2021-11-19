@@ -1,33 +1,4 @@
-FROM ubuntu:20.04
-
-ARG USER_NAME
-ARG USER_ID
-ARG GROUP_ID
-
-# Base system
-RUN apt-get update -y && apt-get upgrade -y
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
-
-RUN apt-get install -y \
-    wget \
-    autoconf \
-    g++ \
-    git \
-    libreadline-dev \
-    libtool \
-    make \
-    mpich 
-
-# OpenMPI
-RUN apt-get install -y \
-    libopenmpi-dev
-RUN echo user_name: ${USER_NAME} user_id: ${USER_ID} group_id: ${GROUP_ID} &&\
-    useradd -l -s /bin/bash -u ${USER_ID} ${USER_NAME} &&\
-    chown --recursive ${USER_ID}:${GROUP_ID}  /opt
-
-USER ${USER_NAME}
-WORKDIR /opt
+FROM ubuntu20.04/basic
 
 #codeml
 RUN wget http://abacus.gene.ucl.ac.uk/software/paml4.9j.tgz && tar -xzf paml4.9j.tgz && cd paml4.9j/src && make -f Makefile && mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 ../bin/
