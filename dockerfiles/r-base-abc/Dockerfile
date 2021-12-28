@@ -18,6 +18,7 @@ RUN echo user_name: ${USER_NAME} user_id: ${USER_ID} group_id: ${GROUP_ID} &&\
 
 USER ${USER_NAME}
 WORKDIR /opt
+ARG CACHEBUST=1
 RUN git clone https://github.com/Simonll/r_abc.git
 
 ENTRYPOINT ["Rscript", "/opt/r_abc/scripts/abc.r"]
