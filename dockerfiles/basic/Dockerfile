@@ -12,12 +12,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 RUN apt-get install -y \
     wget \
     autoconf \
-    g++ \
+    clang \
     git \
     libreadline-dev \
     libtool \
     make \
-    mpich 
+    cmake \
+    mpich \
+    unzip    
 
 # OpenMPI
 RUN apt-get install -y \
