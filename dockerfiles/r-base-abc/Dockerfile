@@ -10,7 +10,7 @@ RUN apt-get update \
 RUN apt-get install libcurl4-openssl-dev libssl-dev git -y --no-install-recommends
 
 ENV LIBARROW_MINIMAL=false
-RUN install2.r --error --deps TRUE abc arrow optparse
+RUN install2.r --error --deps TRUE --ncpus -1 abc arrow optparse
 RUN rm -rf /tmp/downloaded_packages
 
 RUN if id $USER_ID &>/dev/null; then echo 'user found' $(id -nu $USER_ID); userdel $(id -nu $USER_ID); else echo 'user not found'; fi;
