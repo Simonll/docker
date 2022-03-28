@@ -1,4 +1,4 @@
-FROM r-base:3.6.3
+FROM r-base:4.1.0
 
 ARG USER_NAME
 ARG USER_ID
