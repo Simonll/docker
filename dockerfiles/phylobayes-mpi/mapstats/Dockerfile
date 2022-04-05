@@ -19,6 +19,7 @@ ENV OMPI_MCA_btl_vader_single_copy_mechanism=none
 # We reiterate our advice against doing so - please proceed at your own risk.
 
 #pbmpi
+ARG CACHEBUST=1
 RUN git clone https://github.com/Simonll/pbmpi.git -v && cd pbmpi/sources/  && make
 
 ENV PATH="/opt/pbmpi/data:${PATH}"
