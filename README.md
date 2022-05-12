@@ -28,7 +28,9 @@ docker build -t ubuntu20.04/bayescode:latest https://github.com/Simonll/docker.g
 ```bash
 docker pull evolbioinfo/iqtree:v2.2.0
 ```
-
+```bash
+docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/iqtree
+```
 # R CRAN
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base3.6.3/abc:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/r-base-abc --pull
