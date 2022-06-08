@@ -20,6 +20,6 @@ ENV OMPI_MCA_btl_vader_single_copy_mechanism=none
 
 ARG CACHEBUST=1
 #phylobayes
-RUN git clone -b perspectives https://github.com/bayesiancook/phylobayes.git -v && cd phylobayes/sources/  && make
+RUN git clone -b perspectives https://github.com/Simonll/phylobayes.git -v && cd phylobayes/sources/  && make
 
 ENV PATH="/opt/phylobayes/data:${PATH}"
