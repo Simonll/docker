@@ -50,12 +50,20 @@ docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base3.6.3/abc:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/r-base-abc --pull
 ```
+<<<<<<< HEAD
 ## r-base/phytools:latest
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base3.6.3/phytools:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/r-base-phytools --pull
 ```
+=======
+# pandoc
+- https://hub.docker.com/r/pandoc/minimal
+
+>>>>>>> 0ced4f77266647ea163d6c9ba405b6d9f29ea37f
 ## for pruning docker cache
 if something like this happens "E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.9_amd64.deb  404  Not Found [IP: XXX.XXX.XXX.XXX 80]" you need to re-build the image from scratch
 ```bash
 docker system prune -a
+
+
 ```
