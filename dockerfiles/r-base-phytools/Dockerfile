@@ -7,7 +7,7 @@ ARG GROUP_ID
 ENV TZ=America/Montreal
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends 
-RUN apt-get install libcurl4-openssl-dev libssl-dev git -y --no-install-recommends
+RUN apt-get install libcurl4-openssl-dev libssl-dev git libmagick++-dev -y --no-install-recommends
 
 ENV LIBARROW_MINIMAL=false
 RUN install2.r --error --deps TRUE --ncpus -1 phytools arrow optparse
