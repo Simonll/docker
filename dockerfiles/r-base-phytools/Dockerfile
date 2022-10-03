@@ -10,7 +10,7 @@ RUN apt-get update \
 RUN apt-get install libcurl4-openssl-dev libssl-dev git libmagick++-dev -y --no-install-recommends
 
 ENV LIBARROW_MINIMAL=false
-RUN install2.r --error --deps TRUE --ncpus -1 phylotools arrow optparse
+RUN install2.r --error --deps TRUE --ncpus -1 phytools arrow optparse
 RUN rm -rf /tmp/downloaded_packages
 
 RUN if id $USER_ID &>/dev/null; then echo 'user found' $(id -nu $USER_ID); userdel $(id -nu $USER_ID); else echo 'user not found'; fi;
@@ -23,4 +23,4 @@ WORKDIR /opt
 ARG CACHEBUST=1
 RUN git clone https://github.com/Simonll/fastbm.git
 
-ENTRYPOINT ["Rscript", "/opt/fastbm/scripts/fastbm.r"]
+# ENTRYPOINT ["Rscript", "/opt/fastbm/scripts/fastbm.r"]
