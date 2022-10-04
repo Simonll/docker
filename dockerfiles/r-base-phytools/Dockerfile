@@ -23,4 +23,4 @@ WORKDIR /opt
 ARG CACHEBUST=1
 RUN git clone https://github.com/Simonll/fastbm.git
 
-# ENTRYPOINT ["Rscript", "/opt/fastbm/scripts/fastbm.r"]
+ENTRYPOINT ["Rscript", "/opt/fastbm/scripts/fastbm.r"]
