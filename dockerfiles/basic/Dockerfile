@@ -19,14 +19,27 @@ RUN apt-get install -y \
     make \
     cmake \
     mpich \
-    unzip    
+    unzip \
+    build-essential \
+    bash-completion \
+    tar \
+    libboost-dev \
+    libboost-program-options-dev \ 
+    libboost-date-time-dev \
+    libboost-filesystem-dev \
+    libboost-regex-dev \
+    libboost-serialization-dev \
+    libboost-system-dev \
+    libboost-thread-dev
 
 # OpenMPI
 RUN apt-get install -y \
     libopenmpi-dev
 RUN echo user_name: ${USER_NAME} user_id: ${USER_ID} group_id: ${GROUP_ID} &&\
-    useradd -l -s /bin/bash -u ${USER_ID} ${USER_NAME} &&\
+    useradd -m -l -s /bin/bash -u ${USER_ID} ${USER_NAME} &&\
+    chown --recursive ${USER_ID}:${GROUP_ID} /home/${USER_NAME}/ &&\
     chown --recursive ${USER_ID}:${GROUP_ID}  /opt
+
 
 USER ${USER_NAME}
 WORKDIR /opt

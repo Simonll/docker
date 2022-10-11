@@ -3,6 +3,10 @@
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) -t ubuntu20.04/basic:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/basic --pull
 ```
+## ubuntu20.04/revbayes:latest
+```bash
+docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/revbayes
+```
 ## ubuntu20.04/pbmpi:latest
 ```bash
 docker build -t ubuntu20.04/pbmpi:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes-mpi
@@ -44,6 +48,10 @@ docker pull evolbioinfo/iqtree:v2.2.0
 ## ubuntu20.04/iqtree:latest
 ```bash
 docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/iqtree
+```
+## ubuntu20.04/iqtree:latest
+```bash
+docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/ravbayes
 ```
 # R CRAN
 ## r-base4.1.0/abc:latest
