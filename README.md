@@ -25,8 +25,7 @@ docker build -t ubuntu20.04/phylobayes_mapstats:latest https://github.com/Simonl
 ```
 ## ubuntu20.04/lfp:latest
 ```bash
-docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/lfp:latest https://github.com/Simonll/docker.git#develop:/
-dockerfiles/LikelihoodFreePhylogenetics
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/lfp:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/LikelihoodFreePhylogenetics
 ```
 ## ubuntu20.04/codeml:latest
 ```bash
