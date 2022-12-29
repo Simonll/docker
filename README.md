@@ -50,7 +50,7 @@ docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.gi
 ```
 ### run interactive docker session
 ```bash
-docker run --rm -v  $PWD:/data --rm -it ubuntu20.04/revbayes:latest
+docker run --rm -v  $PWD:/data -it ubuntu20.04/revbayes:latest
 ```
 ### connect to container with docker
 ```vscode
@@ -67,7 +67,7 @@ docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}
 ```
 ###
 ```bash
-docker run --rm -v  $PWD:/data --rm -it  --entrypoint /bin/bash r-base3.6.3/phytools:latest
+docker run --rm -v  $PWD:/data -it  --entrypoint /bin/bash r-base3.6.3/phytools:latest
 ```
 # pandoc
 - https://hub.docker.com/r/pandoc/minimal
