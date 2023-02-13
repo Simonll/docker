@@ -46,7 +46,7 @@ docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#
 ```
 ## ubuntu20.04/revbayes:latest
 ```bash
-docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/ravbayes
+docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/revbayes
 ```
 ### run interactive docker session
 ```bash
