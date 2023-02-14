@@ -48,6 +48,10 @@ docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#
 ```bash
 docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/revbayes
 ```
+## r-base4.1.0/revbayesplus:latest
+```bash
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base4.1.0/revbayesplus:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/revbayes/r-base/ --pull
+```
 ### run interactive docker session
 ```bash
 docker run --rm -v  $PWD:/data -it ubuntu20.04/revbayes:latest
