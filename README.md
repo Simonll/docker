@@ -52,6 +52,10 @@ docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.gi
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base4.1.0/revbayesplus:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/revbayes/r-base/ --pull
 ```
+## ubuntu20.04/ncbi-datasets:latest
+```bash
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/ncbi-datasets https://github.com/Simonll/docker.git#develop:/dockerfiles/ncbi-datasets/ --pull
+```
 ### run interactive docker session
 ```bash
 docker run --rm -v  $PWD:/data -it ubuntu20.04/revbayes:latest

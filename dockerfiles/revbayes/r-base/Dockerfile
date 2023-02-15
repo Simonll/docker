@@ -1,4 +1,4 @@
-FROM r-base:4.1.0
+FROM r-base:4.2.2
 
 ARG USER_NAME
 ARG USER_ID
@@ -7,7 +7,11 @@ ARG GROUP_ID
 ENV TZ=America/Montreal
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
-    libcurl4-openssl-dev libssl-dev git libmagick++-dev -y --no-install-recommends \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    git \
+    libgit2-dev \
+    libmagick++-dev \
     libboost-dev \
     libboost-program-options-dev \ 
     libboost-date-time-dev \
@@ -17,10 +21,23 @@ RUN apt-get update \
     libboost-system-dev \
     libboost-thread-dev \
     cmake \
+    libfontconfig1 \
+    libharfbuzz-dev \ 
+    libfribidi-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ENV LIBARROW_MINIMAL=false
-RUN install2.r --error --deps TRUE --ncpus -1 arrow optparse remotes && rm -rf /tmp/downloaded_packages/
+RUN install2.r --error --deps TRUE --ncpus -1 \
+    -r "https://cran.rstudio.com" \
+    -r "http://www.bioconductor.org/packages/release/bioc" \
+    arrow \
+    optparse \
+    remotes \
+    devtools \ 
+    ggtree \ 
+    grid \
+    gridExtra \
+    && rm -rf /tmp/downloaded_packages/
 RUN installGithub.r revbayes/RevGadgets && rm -rf /tmp/downloaded_packages/
 
 RUN if id $USER_ID &>/dev/null; then echo 'user found' $(id -nu $USER_ID); userdel $(id -nu $USER_ID); else echo 'user not found'; fi;
@@ -39,6 +56,8 @@ RUN git clone --depth=1 https://github.com/revbayes/revbayes.git &&\
         && rm -rf build/ \
         && ./build.sh \
         && mv rb /opt/revbayes/rb
+
+WORKDIR /data
 
 ENV PATH="/opt/revbayes:${PATH}"
 
