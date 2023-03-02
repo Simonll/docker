@@ -35,11 +35,20 @@ docker build -t ubuntu20.04/codeml:latest https://github.com/Simonll/docker.git#
 ```bash
 docker build -t ubuntu20.04/bayescode:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode
 ```
+# from MACSE https://github.com/ranwez/MACSE_V2_PIPELINES
+```bash
+docker build -t ubuntu16.04/macse:latest https://github.com/ranwez/MACSE_V2_PIPELINES.git#master:/OMM_MACSE -f OMM_MACSE_V11.05_docker.def
+```
+## evolbioinfo/iqtree:v2.2.0
+```bash
+docker pull evolbioinfo/iqtree:v2.2.0
+```
 # from pasteur evolbioinfo https://github.com/evolbioinfo
 ## evolbioinfo/iqtree:v2.2.0
 ```bash
 docker pull evolbioinfo/iqtree:v2.2.0
 ```
+
 ## ubuntu20.04/iqtree:latest
 ```bash
 docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/iqtree
