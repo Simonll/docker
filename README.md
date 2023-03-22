@@ -39,6 +39,11 @@ docker build -t ubuntu20.04/bayescode:latest https://github.com/Simonll/docker.g
 ```bash
 docker build -t ubuntu16.04/macse:latest https://github.com/ranwez/MACSE_V2_PIPELINES.git#master:/OMM_MACSE -f OMM_MACSE_V11.05_docker.def
 ```
+## ubuntu20.04/macse:latest
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/macse:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/macse
+```
+
 ## evolbioinfo/iqtree:v2.2.0
 ```bash
 docker pull evolbioinfo/iqtree:v2.2.0
