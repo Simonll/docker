@@ -3,6 +3,10 @@
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) -t ubuntu20.04/basic:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/basic --pull
 ```
+## ubuntu16.04/basic:latest
+```bash
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) -t ubuntu16.04/basic:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/basic/16.04 --pull
+```
 ## ubuntu20.04/pbmpi:latest
 ```bash
 docker build -t ubuntu20.04/pbmpi:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes-mpi
@@ -41,19 +45,13 @@ docker build -t ubuntu16.04/macse:latest https://github.com/ranwez/MACSE_V2_PIPE
 ```
 ## ubuntu20.04/macse:latest
 ```bash
-docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/macse:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/macse
-```
-
-## evolbioinfo/iqtree:v2.2.0
-```bash
-docker pull evolbioinfo/iqtree:v2.2.0
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu16.04/macse:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/macse
 ```
 # from pasteur evolbioinfo https://github.com/evolbioinfo
 ## evolbioinfo/iqtree:v2.2.0
 ```bash
 docker pull evolbioinfo/iqtree:v2.2.0
 ```
-
 ## ubuntu20.04/iqtree:latest
 ```bash
 docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/iqtree
@@ -87,7 +85,7 @@ docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base3.6.3/phytools:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/r-base-phytools --pull
 ```
-###
+### override entrypoint with --entrypoint /bin/bash
 ```bash
 docker run --rm -v  $PWD:/data -it  --entrypoint /bin/bash r-base3.6.3/phytools:latest
 ```
