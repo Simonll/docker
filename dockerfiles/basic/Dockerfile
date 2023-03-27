@@ -30,7 +30,8 @@ RUN apt-get -y install --no-install-recommends \
     libboost-regex-dev \
     libboost-serialization-dev \
     libboost-system-dev \
-    libboost-thread-dev
+    libboost-thread-dev \
+    libc6
 
 
 # OpenMPI
