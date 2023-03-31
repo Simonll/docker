@@ -20,6 +20,6 @@ ENV OMPI_MCA_btl_vader_single_copy_mechanism=none
 
 #pbmpi
 ARG CACHEBUST=1
-RUN git clone -b perspectives https://github.com/Simonll/pbmpi.git -v && cd pbmpi/sources/  && make
+RUN git clone -b submap https://github.com/Simonll/pbmpi.git -v && cd pbmpi/sources/  && make
 
 ENV PATH="/opt/pbmpi/data:${PATH}"
