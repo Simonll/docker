@@ -15,6 +15,10 @@ docker build -t ubuntu20.04/pbmpi:latest https://github.com/Simonll/docker.git#d
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/pbmpi_mapstats:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes-mpi/mapstats
 ```
+## ubuntu20.04/pbmpi_mutselaacdeg:latest
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/pbmpi_mutselaacdeg:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes-mpi/mutselaacdeg
+```
 ## ubuntu20.04/coevol:latest
 ```bash
 docker build -t ubuntu20.04/coevol:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/coevol
@@ -26,10 +30,6 @@ docker build -t ubuntu20.04/phylobayes:latest https://github.com/Simonll/docker.
 ## ubuntu20.04/phylobayes_mapstats:latest
 ```bash
 docker build -t ubuntu20.04/phylobayes_mapstats:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes/mapstats
-```
-## ubuntu20.04/phylobayes_mutselaacdeg:latest
-```bash
-docker build -t ubuntu20.04/phylobayes_mutselaacdeg:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes/mutselaacdeg
 ```
 ## ubuntu20.04/lfp:latest
 ```bash
