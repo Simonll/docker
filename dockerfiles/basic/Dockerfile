@@ -31,8 +31,10 @@ RUN apt-get -y install --no-install-recommends \
     libboost-serialization-dev \
     libboost-system-dev \
     libboost-thread-dev \
-    libc6
+    apt-transport-https \
+    ca-certificates
 
+RUN update-ca-certificates
 
 # OpenMPI
 RUN apt-get -y install --no-install-recommends \
