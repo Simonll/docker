@@ -5,15 +5,23 @@ FROM rocker/rstudio:4.2.2
 # ARG GROUP_ID
 
 ENV TZ=America/Montreal
-# RUN apt-get update \
-# 	&& apt-get install -y --no-install-recommends \ 
-#     libcurl4-openssl-dev \
-#     libssl-dev \ 
-#     git \
-#     libmagick++-dev 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \ 
+    libcurl4-openssl-dev \
+    libssl-dev \ 
+    git \
+    libmagick++-dev \
+    libglpk-dev \
+    libgsl-dev \
+    libcgal-dev \ 
+    libglu1-mesa-dev \
+    libx11-dev
 
+# workshop10
 RUN install2.r --error --deps TRUE --ncpus -1 Hmisc labdsv MASS vegan ggplot2 remotes optparse
 RUN Rscript -e 'remotes::install_url("https://cran.r-project.org/src/contrib/Archive/mvpart/mvpart_1.6-2.tar.gz")'
+# workshop09
+RUN install2.r --error --deps TRUE --ncpus -1 ape ade4 codep gclus GGally PlaneGeometry matlib knitr 
 RUN rm -rf /tmp/downloaded_packages
 
 # RUN if id $USER_ID &>/dev/null; then echo 'user found' $(id -nu $USER_ID); userdel $(id -nu $USER_ID); else echo 'user not found'; fi;
@@ -26,7 +34,10 @@ WORKDIR /home/rstudio
 
 ARG CACHEBUST=1
 RUN git clone -b main https://github.com/QCBSRworkshops/workshop10.git
+RUN git clone -b main https://github.com/QCBSRworkshops/workshop09.git
 RUN wget https://r.qcbs.ca/workshop10/book-fr/workshop10-script-fr.R && \
+    wget https://r.qcbs.ca/workshop09/book-fr/workshop09-script-fr.R && \
+    wget https://r.qcbs.ca/workshop09/pres-en/data/coldiss.r && \
     mkdir data && cd data && \
     wget https://r.qcbs.ca/workshop10/pres-fr/data/doubsspe.csv && \
     wget https://r.qcbs.ca/workshop10/pres-fr/data/doubsenv.csv && \
