@@ -19,6 +19,6 @@ ENV OMPI_MCA_btl_vader_single_copy_mechanism=none
 # We reiterate our advice against doing so - please proceed at your own risk.
 
 
-RUN git clone https://github.com/simonll/bayescode.git -v && cd bayescode/ && make
+RUN git clone https://github.com/simonll/bayescode.git -v && cd bayescode/ && make tiny
 
-ENV PATH="/opt/bayescode/_build:${PATH}"
+ENV PATH="/opt/bayescode/bin:${PATH}"
