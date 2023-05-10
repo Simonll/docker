@@ -18,7 +18,7 @@ ENV OMPI_MCA_btl_vader_single_copy_mechanism=none
 # add one more layer of certainty that you want to do so.
 # We reiterate our advice against doing so - please proceed at your own risk.
 
-
-RUN git clone https://github.com/simonll/bayescode.git -v && cd bayescode/ && make tiny
+ARG CACHEBUST=1
+RUN git clone -b chronogram https://github.com/simonll/bayescode.git -v && cd bayescode/ && make tiny
 
 ENV PATH="/opt/bayescode/bin:${PATH}"
