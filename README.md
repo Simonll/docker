@@ -41,7 +41,7 @@ docker build -t ubuntu20.04/codeml:latest https://github.com/Simonll/docker.git#
 ```
 ## ubuntu20.04/bayescode:latest
 ```bash
-docker build -t ubuntu20.04/bayescode:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode
 ```
 # from MACSE https://github.com/ranwez/MACSE_V2_PIPELINES
 ```bash
