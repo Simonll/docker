@@ -29,7 +29,7 @@ docker build -t ubuntu20.04/phylobayes:latest https://github.com/Simonll/docker.
 ```
 ## ubuntu20.04/phylobayes_mapstats:latest
 ```bash
-docker build -t ubuntu20.04/phylobayes_mapstats:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes/mapstats
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/phylobayes_mapstats:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes/mapstats
 ```
 ## ubuntu20.04/lfp:latest
 ```bash
