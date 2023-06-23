@@ -39,10 +39,19 @@ docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/lfp:latest https:/
 ```bash
 docker build -t ubuntu20.04/codeml:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/codeml
 ```
-## ubuntu20.04/bayescode:latest
+## ubuntu20.04/bayescode_chronogram:latest
 ```bash
-docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_chronogram:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode
 ```
+## ubuntu20.04/bayescode_mutselaac:latest
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaac:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselaac
+```
+## ubuntu20.04/bayescode_mutselc:latest
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselc:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselc
+```
+
 # from MACSE https://github.com/ranwez/MACSE_V2_PIPELINES
 ```bash
 docker build -t ubuntu16.04/macse:latest https://github.com/ranwez/MACSE_V2_PIPELINES.git#master:/OMM_MACSE -f OMM_MACSE_V11.05_docker.def
