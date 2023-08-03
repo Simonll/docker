@@ -98,6 +98,11 @@ docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base3.6.3/phytools:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/r-base-phytools --pull
 ```
+## buchfink/diamond https://github.com/bbuchfink/diamond/
+```bash
+conda update diamond
+```
+
 ## rstudio:4.2.2
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/rstudio:4.2.2 https://github.com/Simonll/docker.git#develop:/dockerfiles/rstudio/4.2.2 --pull
