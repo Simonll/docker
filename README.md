@@ -103,6 +103,11 @@ docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}
 conda update diamond
 ```
 
+## busco
+```bash
+docker pull ezlabgva/busco:v5.4.7_cv1
+```
+
 ## rstudio:4.2.2
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/rstudio:4.2.2 https://github.com/Simonll/docker.git#develop:/dockerfiles/rstudio/4.2.2 --pull
