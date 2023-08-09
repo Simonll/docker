@@ -52,9 +52,9 @@ docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaa
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselc:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselc
 ```
 
-# from MACSE https://github.com/ranwez/MACSE_V2_PIPELINES
+# from MACSE https://github.com/ranwez/MACSE_V2_PIPELINES ** new version available **
 ```bash
-docker build -t ubuntu16.04/macse:latest https://github.com/ranwez/MACSE_V2_PIPELINES.git#master:/OMM_MACSE -f OMM_MACSE_V11.05_docker.def
+docker build -t ubuntu16.04/macse:latest https://github.com/ranwez/MACSE_V2_PIPELINES.git#master:/OMM_MACSE/V11_05b_FREEZED -f OMM_MACSE_V11.05_docker.def
 ```
 ## ubuntu20.04/macse:latest
 ```bash
