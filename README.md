@@ -56,7 +56,7 @@ docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselc:
 ```bash
 docker build -t ubuntu16.04/macse:latest https://github.com/ranwez/MACSE_V2_PIPELINES.git#master:/OMM_MACSE/V11_05b_FREEZED -f OMM_MACSE_V11.05_docker.def
 ```
-## ubuntu20.04/macse:latest
+## ubuntu16.04/macse:latest
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu16.04/macse:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/macse
 ```
@@ -69,6 +69,11 @@ docker pull evolbioinfo/iqtree:v2.2.0
 ```bash
 docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/iqtree
 ```
+## ubuntu20.04/fasttree:latest
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/fasttree:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/fasttree
+```
+
 ## ubuntu20.04/revbayes:latest
 ```bash
 docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/revbayes

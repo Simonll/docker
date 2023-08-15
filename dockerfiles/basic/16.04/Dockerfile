@@ -41,12 +41,11 @@ RUN  apt-get -y install --no-install-recommends \
     libc6 \
     && rm -rf /var/lib/apt/lists/*
 
-
-RUN echo user_name: ${USER_NAME} user_id: ${USER_ID} group_id: ${GROUP_ID} &&\
-    useradd -m -l -s /bin/bash -u ${USER_ID} ${USER_NAME} &&\
-    chown --recursive ${USER_ID}:${GROUP_ID} /home/${USER_NAME}/ &&\
-    chown --recursive ${USER_ID}:${GROUP_ID}  /opt
-
+RUN echo user_name: ${USER_NAME} user_id: ${USER_ID} group_id: ${GROUP_ID} && \
+    useradd -m -l -s /bin/bash -u ${USER_ID} ${USER_NAME} && \
+    chown --recursive ${USER_ID}:${GROUP_ID} /home/${USER_NAME}/ && \
+    chown --recursive ${USER_ID}:${GROUP_ID} /opt
+RUN echo $(ls -la /opt)
 
 USER ${USER_NAME}
 WORKDIR /opt
