@@ -73,7 +73,10 @@ docker build -t ubuntu20.04/iqtree:latest https://github.com/Simonll/docker.git#
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/fasttree:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/fasttree
 ```
-
+## staphb/treemmer:latest from https://hub.docker.com/r/staphb/treemmer
+```bash
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/treemmer https://github.com/Simonll/docker.git#develop:/dockerfiles/treemmer/
+```
 ## ubuntu20.04/revbayes:latest
 ```bash
 docker build -t ubuntu20.04/revbayes:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/revbayes
@@ -84,7 +87,7 @@ docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}
 ```
 ## ubuntu20.04/ncbi-datasets:latest
 ```bash
-docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/ncbi-datasets https://github.com/Simonll/docker.git#develop:/dockerfiles/ncbi-datasets/ --pull
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/ncbi-datasets https://github.com/Simonll/docker.git#develop:/dockerfiles/ncbi-datasets/
 ```
 ### run interactive docker session
 ```bash
