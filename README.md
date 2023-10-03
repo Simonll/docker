@@ -51,7 +51,6 @@ docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaa
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselc:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselc
 ```
-
 # from MACSE https://github.com/ranwez/MACSE_V2_PIPELINES ** new version available **
 ```bash
 docker build -t ubuntu16.04/macse:latest https://github.com/ranwez/MACSE_V2_PIPELINES.git#master:/OMM_MACSE/V11_05b_FREEZED -f OMM_MACSE_V11.05_docker.def
@@ -110,12 +109,14 @@ docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}
 ```bash
 conda update diamond
 ```
-
 ## busco
 ```bash
-docker pull ezlabgva/busco:v5.4.7_cv1
+docker pull ezlabgva/busco:v5.5.7_cv1
 ```
-
+## biocontainers/buscov5.5.0:latest
+```bash
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg GROUP_NAME=$(YOURGROUPNAME)-t biocontainers/buscov5.5.0:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/busco/
+```
 ## rstudio:4.2.2
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/rstudio:4.2.2 https://github.com/Simonll/docker.git#develop:/dockerfiles/rstudio/4.2.2 --pull
@@ -124,7 +125,6 @@ docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/rstudio:4.2.2 http
 ```bash
 ssh -L 8787:localhost:8787 user@server
 ```
-
 ### override entrypoint with --entrypoint /bin/bash
 ```bash
 docker run --rm -v  $PWD:/data -it  --entrypoint /bin/bash r-base3.6.3/phytools:latest
