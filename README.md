@@ -115,7 +115,8 @@ docker pull ezlabgva/busco:v5.5.7_cv1
 ```
 ## biocontainers/buscov5.5.0:latest
 ```bash
-docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg GROUP_NAME=$(YOURGROUPNAME)-t biocontainers/buscov5.5.0:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/busco/
+YOURGROUPNAME="XXX"
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg GROUP_NAME=$YOURGROUPNAME -t biocontainers/buscov5.5.0:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/busco/
 ```
 ## rstudio:4.2.2
 ```bash

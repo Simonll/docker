@@ -1,4 +1,4 @@
-from quay.io/biocontainers/busco:5.2.2--pyhdfd78af_0
+from quay.io/biocontainers/busco:5.5.0--pyhdfd78af_0
 
 # modified from biocontainers / busco
 
