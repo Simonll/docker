@@ -7,6 +7,15 @@ docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) -t ubuntu16.04/basic:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/basic/16.04 --pull
 ```
+## debian_bullseye-slim/basic_anaconda3:latest
+```bash
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) -t ubuntu20.04/basic_anaconda3:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/basic/basic_anaconda3 --pull
+```
+## 
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t basic_anaconda3/dms_tools2:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/dms_tools2
+```
+
 ## ubuntu20.04/pbmpi:latest
 ```bash
 docker build -t ubuntu20.04/pbmpi:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes-mpi
@@ -42,6 +51,10 @@ docker build -t ubuntu20.04/codeml:latest https://github.com/Simonll/docker.git#
 ## ubuntu20.04/bayescode_chronogram:latest
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_chronogram:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode
+```
+## ubuntu20.04/bayescode_mutselaac:latest
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaa:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselaa_sel_coef
 ```
 ## ubuntu20.04/bayescode_mutselaac:latest
 ```bash
