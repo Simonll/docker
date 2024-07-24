@@ -54,7 +54,7 @@ docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_chronogr
 ```
 ## ubuntu20.04/bayescode_mutselaac:latest
 ```bash
-docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaa:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselaa_sel_coef
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaa:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselaa
 ```
 ## ubuntu20.04/bayescode_mutselaac:latest
 ```bash
