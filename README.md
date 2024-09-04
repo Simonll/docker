@@ -52,7 +52,7 @@ docker build -t ubuntu20.04/codeml:latest https://github.com/Simonll/docker.git#
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_chronogram:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode
 ```
-## ubuntu20.04/bayescode_mutselaac:latest
+## ubuntu20.04/bayescode_mutselaa:latest
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaa:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselaa
 ```
