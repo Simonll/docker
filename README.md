@@ -20,6 +20,10 @@ docker build --build-arg CACHEBUST=$(date +%s) -t basic_anaconda3/dms_tools2:lat
 ```bash
 docker build -t ubuntu20.04/pbmpi:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes-mpi
 ```
+## ubuntu20.04/pbmpi_mutselc:latest
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/pbmpi_mutselc:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes-mpi/mutselc
+```
 ## ubuntu20.04/pbmpi_mapstats:latest
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/pbmpi_mapstats:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/phylobayes-mpi/mapstats
@@ -117,6 +121,10 @@ docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}
 ## r-base/phytools:latest
 ```bash
 docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base3.6.3/phytools:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/r-base-phytools --pull
+```
+## r-base/phylo:latest
+```bash
+docker build --build-arg USER_NAME=$(whoami) --build-arg USER_ID=$(id -u ${USER}) --build-arg GROUP_ID=$(id -g ${USER}) --build-arg CACHEBUST=$(date +%s) -t r-base3.6.3/phylo:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/r-base-phylo --pull
 ```
 ## buchfink/diamond https://github.com/bbuchfink/diamond/
 ```bash

@@ -15,7 +15,7 @@ RUN apt-get update \
     rm -rf /var/lib/apt/lists/*
 
 ENV LIBARROW_MINIMAL=false
-RUN install2.r --error --deps TRUE --ncpus -1 ape arrow optparse
+RUN install2.r --error --deps TRUE --ncpus -1 ape phytools phangorn arrow optparse
 RUN rm -rf /tmp/downloaded_packages
 
 RUN if id $USER_ID &>/dev/null; then echo 'user found' $(id -nu $USER_ID); userdel $(id -nu $USER_ID); else echo 'user not found'; fi;
