@@ -64,6 +64,10 @@ docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaa
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselaac:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselaac
 ```
+## ubuntu20.04/bayescode_mutselc_test:latest
+```bash
+docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselc_test:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselc/test
+```
 ## ubuntu20.04/bayescode_mutselc:latest
 ```bash
 docker build --build-arg CACHEBUST=$(date +%s) -t ubuntu20.04/bayescode_mutselc:latest https://github.com/Simonll/docker.git#develop:/dockerfiles/BayesCode/mutselc
